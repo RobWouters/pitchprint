@@ -17639,6 +17639,7 @@ var W2P = W2P || {};
     }
 
     function ma(a) {
+        a = a.data
         var b = null;
         if ("number" == typeof a.w && "number" == typeof a.h) b = {
             title: a.t,
@@ -21981,7 +21982,7 @@ WEB2PRINT = W2P, W2P.version = "8.2.0",
         }, h.designer.prototype.showModal = function(a) {
             a && PPR.broadcast("alert-modal", a)
         }, h.designer.prototype.newPage = function(a, b, c) {
-            a && f.broadcast("new-page", {
+            a && f.fire("new-page", {
                 w: a,
                 h: b,
                 t: c
