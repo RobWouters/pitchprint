@@ -17582,7 +17582,9 @@ var W2P = W2P || {};
     }
 
     function ga(a) {
-        if (sa.runtime.design.pages && "all" === a.data && sa.runtime.design.pages.length) {
+        if ("number" == typeof a.data && sa.runtime.design.pages[a.data]) {
+            sa.runtime.design.pages[a.data].destroy()
+        } else if (sa.runtime.design.pages && "all" === a.data && sa.runtime.design.pages.length) {
             sa.runtime.design.cPage = null;
             for (var b = 0, c = sa.runtime.design.pages.length; c > b; b++) sa.runtime.design.pages[0].destroy()
         }
