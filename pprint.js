@@ -21992,7 +21992,7 @@ WEB2PRINT = W2P, W2P.version = "8.2.0",
         }, h.designer.prototype.selectPage = function(a) {
             a && f.fire("select-page", parseInt(a))
         }, h.designer.prototype.deletePage = function(a) {
-            a && f.fire("remove-page", parseInt(a))
+            f.fire("remove-page", parseInt(a))
         }, h.designer.prototype.getPageAt = function(a) {
             return "number" == typeof a ? h.MODEL.runtime.pages[a] : void 0
         }, h.designer.prototype.getPages = function() {
